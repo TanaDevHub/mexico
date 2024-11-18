@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider de Fondo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tribus">Tribus</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="img/1.jpg" alt="Imagen 1">
+            </div>
+            <div class="slide">
+                <img src="img/2.jpg" alt="Imagen 2">
+            </div>
+            <div class="slide">
+                <img src="img/3.jpg" alt="Imagen 3">
+            </div>
+        </div>
+    </div>
+
+    <section class="starting-point">
+        <h1>¿Por dónde empezar?</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+    </section>
+
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="event" data-info="2000 a.C. - Inicio de la civilización Olmeca">
+                <span class="dot"></span>
+                <span class="year">2000 a.C.</span>
+            </div>
+            <div class="event" data-info="250 d.C. - Auge de Teotihuacán">
+                <span class="dot"></span>
+                <span class="year">250 d.C.</span>
+            </div>
+            <div class="event" data-info="900 d.C. - Decadencia Maya">
+                <span class="dot"></span>
+                <span class="year">900 d.C.</span>
+            </div>
+            <div class="event" data-info="1325 d.C. - Fundación de Tenochtitlán">
+                <span class="dot"></span>
+                <span class="year">1325 d.C.</span>
+            </div>
+            <div class="event" data-info="1521 d.C. - Conquista de Tenochtitlán">
+                <span class="dot"></span>
+                <span class="year">1521 d.C.</span>
+            </div>
+        </div>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+    <script src="timeline.js"></script>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -140,3 +140,12 @@ body {
     margin: 0 auto; /* Centrar el texto */
     font-family: Arial
 }
+
+#map {
+    height: 600px; /* Altura del mapa */
+    width: 80%; /* Ancho ajustado al 80% de la pantalla */
+    max-width: 900px; /* Limitar el ancho máximo */
+    margin: 0 auto; /* Centramos el mapa horizontalmente */
+    border: 2px solid #ddd; /* Opcional: agregar un borde */
+    border-radius: 10px; /* Bordes redondeados */
+}

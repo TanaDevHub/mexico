@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slider de Fondo</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
     <nav class="navbar">
@@ -38,15 +39,9 @@
         </p>
     </section>
 
-    <div class="map-container">
-        <svg id="mexico-map" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
-            <!-- Estados de México en formato SVG -->
-            <path class="state" id="chiapas" d="M..." data-info="Chiapas: Región Maya y Zapatista"></path>
-            <path class="state" id="yucatan" d="M..." data-info="Yucatán: Cultura Maya, Chichen Itzá"></path>
-            <path class="state" id="oaxaca" d="M..." data-info="Oaxaca: Zapotecas y Mixtecas"></path>
-            <!-- Agregar más estados con sus coordenadas SVG -->
-        </svg>
-        <div class="tooltip" id="tooltip"></div>
-    <script src="index.js"></script>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map.js"></script>
+
 </body>
 </html>
