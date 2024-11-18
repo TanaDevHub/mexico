@@ -38,33 +38,15 @@
         </p>
     </section>
 
-    <div class="timeline-container">
-        <div class="timeline">
-            <div class="event" data-info="2000 a.C. - Inicio de la civilización Olmeca">
-                <span class="dot"></span>
-                <span class="year">2000 a.C.</span>
-            </div>
-            <div class="event" data-info="250 d.C. - Auge de Teotihuacán">
-                <span class="dot"></span>
-                <span class="year">250 d.C.</span>
-            </div>
-            <div class="event" data-info="900 d.C. - Decadencia Maya">
-                <span class="dot"></span>
-                <span class="year">900 d.C.</span>
-            </div>
-            <div class="event" data-info="1325 d.C. - Fundación de Tenochtitlán">
-                <span class="dot"></span>
-                <span class="year">1325 d.C.</span>
-            </div>
-            <div class="event" data-info="1521 d.C. - Conquista de Tenochtitlán">
-                <span class="dot"></span>
-                <span class="year">1521 d.C.</span>
-            </div>
-        </div>
+    <div class="map-container">
+        <svg id="mexico-map" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+            <!-- Estados de México en formato SVG -->
+            <path class="state" id="chiapas" d="M..." data-info="Chiapas: Región Maya y Zapatista"></path>
+            <path class="state" id="yucatan" d="M..." data-info="Yucatán: Cultura Maya, Chichen Itzá"></path>
+            <path class="state" id="oaxaca" d="M..." data-info="Oaxaca: Zapotecas y Mixtecas"></path>
+            <!-- Agregar más estados con sus coordenadas SVG -->
+        </svg>
         <div class="tooltip" id="tooltip"></div>
-    </div>
-    <script src="timeline.js"></script>
-
     <script src="index.js"></script>
 </body>
 </html>
