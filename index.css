@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    font-family: 'Mayan', Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+@font-face {
+    font-family: 'Mayan';
+    src: url('fonts/Mayan.woff2') format('woff2'),
+         url('fonts/Mayan.woff') format('woff'),
+         url('fonts/Mayan.ttf') format('truetype'); /* Fallback */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar {
+    background-color: #4C4B16;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #E6C767; /* Amarillo Maíz */
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #E6C767; /* Amarillo Maíz */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Estilos del Slider */
+
+.slider-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Detrás del contenido */
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    height: 100%;
+    transition: transform 1.5s ease; /* Suaviza los cambios de slide */
+}
+
+.slide {
+    width: 100%; /* Cada slide ocupa todo el ancho */
+    flex-shrink: 0; /* Previene que las slides se compriman */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Recorta las partes de la imagen que sobresalgan */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-container {
+    position: relative; /* Cambiar de fixed a relative */
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    overflow: hidden; /* Esconde contenido sobrante */
+}
+
+.slider {
+    display: flex;
+    height: 100%;
+    transition: transform 1.5s ease-in-out;
+}
+
+.starting-point {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f4f4f4; /* Fondo claro */
+    color: #4C4B16; /* Color del texto */
+}
+
+.starting-point h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #E6C767; /* Amarillo Maíz */
+    font-family: 'Mayan', Arial, sans-serif;
+}
+
+.starting-point p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto; /* Centrar el texto */
+    font-family: Arial
+}
+
+.timeline-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin: 50px 0;
+}
+
+.event {
+    position: relative;
+    text-align: center;
+}
+
+.event .dot {
+    width: 20px;
+    height: 20px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.event .year {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #333;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+    pointer-events: none;
+    white-space: nowrap;
+}
