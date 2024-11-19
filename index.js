@@ -19,3 +19,21 @@ function showNextSlide() {
 
 // Cambia las slides automáticamente, ajustando el intervalo total
 setInterval(showNextSlide, totalInterval);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.getElementById('dropdown-toggle');
+    const dropdown = dropdownToggle.parentElement;
+
+    dropdownToggle.addEventListener('click', function (e) {
+        e.preventDefault(); // Evitar que se desplace la página
+        dropdown.classList.toggle('open');
+    });
+
+    // Cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', function (event) {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+});

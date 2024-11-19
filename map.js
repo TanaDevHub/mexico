@@ -1,12 +1,12 @@
-// Inicializar el mapa centrado en México con un nivel de zoom predeterminado
+// Inicializar el mapa centrado en México con un nivel de zoom ajustado y límites específicos
 const map = L.map('map', {
-    center: [23.634501, -102.552784], // Coordenadas centrales de México
-    zoom: 5, // Zoom inicial
-    maxZoom: 7, // Zoom máximo
-    minZoom: 5, // Zoom mínimo
-    maxBounds: [ // Límites del mapa para no salir de México
-        [33.0, -118.0], // Norte-Oeste
-        [14.0, -86.0]   // Sur-Este
+    center: [22.0, -102.0], // Coordenadas centrales ajustadas más hacia el centro-sur
+    zoom: 6, // Nivel de zoom inicial adecuado para mostrar México desde Aguascalientes hacia el sur
+    maxZoom: 6, // Zoom máximo permitido
+    minZoom: 6, // Zoom mínimo permitido
+    maxBounds: [ // Límites ajustados (Aguascalientes al norte)
+        [22.0, -117.0], // Norte-Oeste (aproximadamente Aguascalientes y áreas al oeste)
+        [14.54, -82.0] // Sur-Este (más libertad hacia el este)
     ]
 });
 
@@ -17,10 +17,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Crear un ícono personalizado para los marcadores
 const customIcon = L.icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/14090/14090489.png', // Icono de marcador
-    iconSize: [30, 40], // Tamaño del icono
-    iconAnchor: [15, 40], // Punto donde el icono se ancla
-    popupAnchor: [0, -40] // Punto donde el popup aparece
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/14090/14090489.png', // Icono personalizado
+    iconSize: [30, 35], // Ajustar el tamaño
+    iconAnchor: [15, 35], // Punto de anclaje
+    popupAnchor: [0, -35] // Popup justo encima del ícono
 });
 
 // Lista de civilizaciones con coordenadas y fechas
@@ -57,14 +57,30 @@ const civilizaciones = [
     }
 ];
 
-// Añadir marcadores para cada civilización
+// Añadir marcadores con popups que se muestran al pasar el ratón
 civilizaciones.forEach(civ => {
-    L.marker(civ.coords, { icon: customIcon })
-        .addTo(map)
-        .bindPopup(`<b>${civ.nombre}</b><br>${civ.descripcion}<br><i>${civ.fecha}</i>`);
+    const marker = L.marker(civ.coords, { icon: customIcon }).addTo(map);
+
+    // Crear un popup con la información de la civilización
+    const popupContent = `
+        <b>${civ.nombre}</b><br>
+        ${civ.descripcion}<br>
+        <i>${civ.fecha}</i>
+    `;
+    marker.bindPopup(popupContent);
+
+    // Mostrar el popup automáticamente al pasar el ratón
+    marker.on('mouseover', function () {
+        this.openPopup();
+    });
+
+    // Cerrar el popup cuando se quita el ratón
+    marker.on('mouseout', function () {
+        this.closePopup();
+    });
 });
 
-// Añadir un evento al mapa para limitar interacciones fuera de México
+// Limitar el arrastre del mapa dentro de los límites definidos
 map.on('drag', function() {
     map.panInsideBounds(map.options.maxBounds);
 });

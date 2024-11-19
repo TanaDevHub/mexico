@@ -64,6 +64,69 @@ body {
     left: 0;
 }
 
+/* Dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #4C4B16;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+    max-height: 400px; /* Altura suficiente para mostrar todos los elementos */
+    opacity: 1;
+    visibility: visible;
+    padding: 10px 0;
+}
+
+/* Submenús anidados */
+.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Se posiciona a la derecha */
+    background-color: #333333;
+    border-radius: 4px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.dropdown-item:hover .submenu {
+    max-height: 400px; /* Ajustar según el contenido */
+    opacity: 1;
+    visibility: visible;
+    padding: 10px 0;
+}
+
+/* Estilos adicionales */
+.dropdown-menu a, .submenu a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.dropdown-menu a:hover, .submenu a:hover {
+    background-color: #E6C767;
+    color: #4C4B16;
+}
+
+
+
 @media (max-width: 768px) {
     .nav-links {
         flex-direction: column;
@@ -142,7 +205,7 @@ body {
 }
 
 #map {
-    height: 600px; /* Altura del mapa */
+    height: 500px; /* Altura del mapa */
     width: 80%; /* Ancho ajustado al 80% de la pantalla */
     max-width: 900px; /* Limitar el ancho máximo */
     margin: 0 auto; /* Centramos el mapa horizontalmente */
