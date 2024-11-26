@@ -70,8 +70,6 @@ body {
     top: 100%;
     left: 0;
     background-color: #4C4B16;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
     z-index: 1000;
     list-style: none;
     padding: 0;
@@ -93,8 +91,7 @@ body {
     position: absolute;
     top: 0;
     left: 100%; /* Se posiciona a la derecha */
-    background-color: #333333;
-    border-radius: 4px;
+    background-color: #4C4B16;
     z-index: 1000;
     list-style: none;
     padding: 0;
@@ -121,8 +118,7 @@ body {
 }
 
 .dropdown-menu a:hover, .submenu a:hover {
-    background-color: #E6C767;
-    color: #4C4B16;
+    color: #E6C767;
 }
 
 
@@ -211,4 +207,51 @@ body {
     margin: 0 auto; /* Centramos el mapa horizontalmente */
     border: 2px solid #ddd; /* Opcional: agregar un borde */
     border-radius: 10px; /* Bordes redondeados */
+}
+
+.marquee-container {
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 40px; /* Altura del área visible para el texto */
+    overflow: hidden;
+    background-color: #4C4B16; /* Color de fondo del contenedor */
+    margin-top: 20px; /* Espacio con el contenido de arriba */
+}
+
+.marquee-track {
+    display: flex;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.marquee-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #E6C767; /* Color del texto */
+    padding-right: 2rem; /* Espacio entre textos */
+}
+
+.origins-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f4f4f4; /* Fondo claro */
+    color: #4C4B16; /* Color del texto */
+}
+
+.origins-section  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #E6C767; /* Amarillo Maíz */
+    font-family: 'Mayan', Arial, sans-serif;
+}
+
+.origins-section  p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto; /* Centrar el texto */
+    font-family: Arial
 }
